@@ -1,0 +1,33 @@
+<main>
+    <div class="container my-5">
+        <div class="rounded-3 p-4" style="background-color: #f0f3f2;">
+            <h1>{{category}}</h1>
+        </div>
+        <div>
+            <h6 class="my-4">{{listSp.length}} Products</h6>
+            <div class="row row-cols-5">
+                <div ng-repeat="sp in listSp" class="col p-2">
+                    <div class="border rounded-3 p-3">
+                        <div class="d-flex justify-content-center align-items-center w-100 p-3" style=" height: 200px;">
+                            <a href="#!chi-tiet/{{sp.id}}">
+                                <img src="./assets/img/{{sp.image}}" alt="" class="mw-100 mh-100 rounded-2">
+                            </a>
+                        </div>
+                        <div class="row align-items-center">
+                            <a href="#!chi-tiet/{{sp.id}}" class="list-unstyled text-decoration-none text-dark">
+                                <h6 class="fw-bold mt-3">{{sp.name}}</h6>
+                            </a>
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <p class="text-danger fw-medium m-0">{{sp.price | number}}</p>
+                                <button class="btn btn-primary" ng-click="addToCart(sp.id, 1)">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

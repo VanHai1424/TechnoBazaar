@@ -1,0 +1,234 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "PC"
+    },
+    {
+      "id": "2",
+      "name": "Laptop"
+    },
+    {
+      "id": "3",
+      "name": "Tablet"
+    },
+    {
+      "id": "4",
+      "name": "Smart Phone"
+    },
+    {
+      "id": "5",
+      "name": "Smart Watch"
+    },
+    {
+      "id": "072c",
+      "name": "dasdasda"
+    },
+    {
+      "id": "2071",
+      "name": "Tea"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Product 1",
+      "image": "pro1.jpg",
+      "quantity": 22,
+      "price": 5000000,
+      "desc": "dep",
+      "idDanhMuc": 1
+    },
+    {
+      "id": "2",
+      "name": "Product 2",
+      "image": "pro2.png",
+      "quantity": 32,
+      "price": 12300000,
+      "desc": "dep",
+      "idDanhMuc": 2
+    },
+    {
+      "id": "3",
+      "name": "Product 3",
+      "image": "pro3.webp",
+      "quantity": 46,
+      "price": 5900000,
+      "desc": "xau",
+      "idDanhMuc": 1
+    },
+    {
+      "id": "4",
+      "name": "Product 4",
+      "image": "pro6.jpg",
+      "quantity": 13,
+      "price": 23000000,
+      "desc": "xau",
+      "idDanhMuc": 4
+    },
+    {
+      "id": "5",
+      "name": "San pham 5",
+      "image": "pro7.jpg",
+      "quantity": 23,
+      "price": 4240000,
+      "desc": "dep",
+      "idDanhMuc": 2
+    },
+    {
+      "id": "9de9",
+      "name": "adsdas",
+      "price": "23232000",
+      "quantity": "23232",
+      "idDanhMuc": "2",
+      "image": "pro7.jpg",
+      "desc": "đấ"
+    },
+    {
+      "id": "c5f9",
+      "name": "đâsdasdasd",
+      "price": "2000000",
+      "quantity": "23",
+      "idDanhMuc": "5",
+      "image": "pro9.jpg",
+      "desc": "đâsdasd"
+    },
+    {
+      "id": "a898",
+      "name": "Tea123",
+      "quantity": "12",
+      "price": "122121",
+      "idDanhMuc": "2071",
+      "image": "pro7.jpg",
+      "desc": "dsads"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "user": "admin",
+      "pass": 123,
+      "email": "abc@gmail.com",
+      "role": 0
+    },
+    {
+      "id": "2",
+      "user": "vanhai",
+      "pass": 123,
+      "email": "abc@gmail.com",
+      "role": 1
+    },
+    {
+      "id": "9fb4",
+      "user": "sdas",
+      "email": "dasd",
+      "pass": "as"
+    }
+  ],
+  "order": [
+    {
+      "id": "1",
+      "name": "Van Hai",
+      "email": "abc@gmail.com",
+      "phone": "012345",
+      "address": "Ha noi",
+      "total": "123232"
+    },
+    {
+      "id": "2",
+      "name": "Hai",
+      "email": "abc@gmail.com",
+      "phone": "23232232",
+      "address": "Ha noi",
+      "total": "2311111"
+    },
+    {
+      "id": "5a54",
+      "name": "Văn Hải",
+      "email": "daovanhai1424@gmail.com",
+      "phone": "0969330962",
+      "address": "Ha Noi",
+      "total": 107804646
+    },
+    {
+      "id": "f1a6",
+      "name": "dasd",
+      "email": "asdas",
+      "phone": "2323232",
+      "address": "dasda",
+      "total": 23000000
+    },
+    {
+      "id": "eb5b",
+      "name": "Văn Hải",
+      "email": "daovanhai1424@gmail.com",
+      "phone": "0969330962",
+      "address": "adsda",
+      "total": 5000000
+    },
+    {
+      "id": "9a9d",
+      "name": "Văn Hải",
+      "email": "daovanhai1424@gmail.com",
+      "phone": "0969330962",
+      "address": "Thôn Thụy Khuê",
+      "total": 244242
+    }
+  ],
+  "orderDetail": [
+    {
+      "id": "1",
+      "quantity": "1",
+      "idPro": "1",
+      "idOrder": "1"
+    },
+    {
+      "id": "2",
+      "quantity": "2",
+      "idPro": "2",
+      "idOrder": "1"
+    },
+    {
+      "id": "3",
+      "quantity": "3",
+      "idPro": "3",
+      "idOrder": "2"
+    },
+    {
+      "id": "33d0",
+      "quantity": 2,
+      "idPro": "9de9",
+      "idOrder": "5a54"
+    },
+    {
+      "id": "e555",
+      "quantity": 2,
+      "idPro": "5",
+      "idOrder": "5a54"
+    },
+    {
+      "id": "7f3d",
+      "quantity": 1,
+      "idPro": "4",
+      "idOrder": "5a54"
+    },
+    {
+      "id": "558c",
+      "quantity": 1,
+      "idPro": "4",
+      "idOrder": "f1a6"
+    },
+    {
+      "id": "4a18",
+      "quantity": 1,
+      "idPro": "1",
+      "idOrder": "eb5b"
+    },
+    {
+      "id": "f172",
+      "quantity": 2,
+      "idPro": "a898",
+      "idOrder": "9a9d"
+    }
+  ]
+}

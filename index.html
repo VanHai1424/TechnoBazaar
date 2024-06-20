@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <link rel="stylesheet" href="./lib/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body ng-app="app">
+    <header ng-controller="layoutCtrl" ng-show="showHeader">
+        <div class="border-bottom">
+            <div class="container my-4 d-grid gap-3">
+                <div class="row align-items-center ">
+                    <div class="col-2 d-flex justify-content-center align-items-center ">
+                        <div  style="width: 90px; height: 60px">
+                            <a href="./">
+                                <img src="./assets/img/logo.png" alt="Logo" class="mw-100 mh-100 ">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="input-group position-relative w-75">
+                            <input name="" class="form-control rounded py-2" type="search" ng-model="inputSearch" placeholder="Search for products">
+                            <button name="submit" class="btn p-2 position-absolute end-0" type="submit" ng-click="searchProducts()">
+                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-center justify-content-end ms-auto ">
+                        <a href="#!/gio-hang" class="btn position-relative py-2 px-3">
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                            <span class="badge bg-success rounded-pill position-absolute top-0 end-0">{{cart.length}}</span>
+                        </a>
+                        <button class="btn" id="setting-user" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user fa-lg"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="setting-user">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li ng-hide="user"><a class="dropdown-item" href="#!/dang-nhap">Sign in</a></li>
+                            <li ng-show="user"><a class="dropdown-item" href="" ng-click="logout()">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle border-primary" type="button" id="menu" data-bs-toggle="dropdown" aria-expanded="false">
+                              All Categories
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="menu">
+                                <li ng-repeat="dm in listDm">
+                                    <a class="dropdown-item" href="#!/san-pham/{{dm.id}}">{{dm.name}}</a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <ul class="d-flex list-unstyled gap-3 align-items-center m-0 h-100 fw-medium">
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark hover-blue">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark hover-blue">About us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark hover-blue">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark hover-blue">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark hover-blue">Docs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div ng-view></div>
+    </main>
+    <footer ng-show="showFooter">
+        <div style="background-color: #f0f3f2;">
+            <div class="container py-5">
+                <div class="row row-cols-5 ">
+                    <div>
+                        <h6 class="mb-3">Categories</h6>
+                        <ul class="p-0">
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">PC</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Laptop</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Smart phone</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Smart watch</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Tablet</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Apple</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Samsung</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="mb-3">Get to know us</h6>
+                        <ul class="p-0">
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Company</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">About</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Blog</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Help Center</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Our Value</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="mb-3">For Consumers</h6>
+                        <ul class="p-0">
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Payments</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Shipping</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Product Returns</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">FAQ</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Shop Checkout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="mb-3">Become a Shopper</h6>
+                        <ul class="p-0">
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Shopper Opportunities</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Become a Shopper</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Earnings</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Ideas & Guides</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">New Retailers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 class="mb-3">Programs</h6>
+                        <ul class="p-0">
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Programs</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Gift Cards</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Promos & Coupons</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Ads</a>
+                            </li>
+                            <li class="list-unstyled mb-2">
+                                <a href="#" class="text-decoration-none text-secondary hover-blue">Careers</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./lib/bootstrap.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script>
+        const app = angular.module('app', ['ngRoute']).config(function($routeProvider) {
+            $routeProvider
+            .when('/trang-chu', {
+                templateUrl: "./client/order/index.html",
+                controller: "trangChuCtrl"
+            })
+            .when('/san-pham/:id_cate', {
+                templateUrl: "./client/order/categories.html",
+                controller: "sanPhamCtrl"
+            })
+            .when('/chi-tiet/:id_pro', {
+                templateUrl: "./client/order/pro_detail.html",
+                controller: "chiTietCtrl"
+            })
+            .when('/gio-hang', {
+                templateUrl: "./client/order/cart.html",
+                controller: "cartCtrl"
+            })
+            .when('/thanh-toan', {
+                templateUrl: "./client/order/checkout.html",
+                controller: "checkoutCtrl"
+            })
+            .when('/dang-nhap', {
+                templateUrl: "./client/login/signin.html",
+                controller: "dangNhapCtrl"
+            })
+            .when('/dang-ky', {
+                templateUrl: "./client/login/signup.html",
+                controller: "dangKyCtrl"
+            })
+            .when('/admin/san-pham', {
+                templateUrl: "./admin/product/list_pro.html",
+                controller: "listProCtrl"
+            })
+            .when('/admin/san-pham/add', {
+                templateUrl: "./admin/product/add_pro.html",
+                controller: "addProCtrl"
+            })
+            .when('/admin/san-pham/edit/:id', {
+                templateUrl: "./admin/product/edit_pro.html",
+                controller: "editProCtrl"
+            })
+            .when('/admin/danh-muc/', {
+                templateUrl: "./admin/category/list_cate.html",
+                controller: "listCateCtrl"
+            })
+            .when('/admin/danh-muc/add', {
+                templateUrl: "./admin/category/add_cate.html",
+                controller: "addCateCtrl"
+            })
+            .when('/admin/danh-muc/edit/:id', {
+                templateUrl: "./admin/category/edit_cate.html",
+                controller: "editCateCtrl"
+            })
+            .when('/admin/don-hang', {
+                templateUrl: "./admin/order/list_order.html",
+                controller: "listOrderCtrl"
+            })
+            .when('/admin/don-hang/detail/:id', {
+                templateUrl: "./admin/order/order_detail.html",
+                controller: "orderDetailCtrl"
+            })
+            .otherwise({
+                redirectTo: '/trang-chu' 
+            })
+        })
+
+        app.controller("layoutCtrl", function($scope, $http, $location, $rootScope) {
+            $rootScope.showHeader = true;
+            $rootScope.showFooter = true;
+            $rootScope.cart = [];
+            $rootScope.user = false;
+            $scope.listDm = [];
+            $http({
+                method: "GET",
+                url: "http://localhost:3000/categories"
+            })
+            .then(res => $scope.listDm = res.data)
+            .catch(err => console.log(err))
+
+            $scope.searchProducts = function() {
+                $rootScope.isSearch = true;
+                $location.path('/san-pham/' + $scope.inputSearch);
+            };
+            
+            $scope.logout = function() {
+                delete $rootScope.user;
+                $location.path('/dang-nhap');
+            }
+        })
+    </script>
+    <script src="./client/order/index.js"></script>
+    <script src="./client/order/categories.js"></script>
+    <script src="./client/order/pro_detail.js"></script>
+    <script src="./client/order/cart.js"></script>
+    <script src="./client/order/checkout.js"></script>
+    <script src="./client/login/dangnhap.js"></script>
+    <script src="./client/login/dangky.js"></script>
+    <script src="./admin/product/list.js"></script>
+    <script src="./admin/product/add.js"></script>
+    <script src="./admin/product/edit.js"></script>
+    <script src="./admin/category/list.js"></script>
+    <script src="./admin/category/add.js"></script>
+    <script src="./admin/category/edit.js"></script>
+    <script src="./admin/order/list.js"></script>
+    <script src="./admin/order/detail.js"></script>
+</body>
+</html>

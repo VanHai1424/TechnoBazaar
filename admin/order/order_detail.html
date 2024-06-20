@@ -1,0 +1,103 @@
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 border-end shadow-sm min-vh-100 d-flex flex-column">
+                <div class="border-bottom py-2">
+                    <div style="width: 90px; height: 60px">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="Logo" class="mw-100 mh-100 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="list-group my-4 flex-grow-1 ">
+                    <a href="#!/admin/san-pham" class="list-group-item border-0 list-group-item-action rounded-2 "
+                        aria-current="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="ms-3 fw-semibold ">Product</span>
+                    </a>
+                    <a href="#!/admin/danh-muc" class="list-group-item border-0 list-group-item-action rounded-2">
+                        <i class="fa-solid fa-list"></i>
+                        <span class="ms-3 fw-semibold ">Categories</span>
+                    </a>
+                    <a href="#!/admin/don-hang"
+                        class="list-group-item border-0 list-group-item-action rounded-2 active">
+                        <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                        <span class="ms-3 fw-semibold ">Orders</span>
+                    </a>
+                </div>
+                <div class="border-top py-3 position-fixed bottom-0" style="width: 228.39px;">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="d-flex align-items-center justify-content-center"
+                            style="width: 30px; height: 30px;">
+                            <img src="./assets/img/avatar.png" alt="" class="mw-100 mh-100 ">
+                        </div>
+                        <div class="dropup-center dropup">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Admin
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Setting</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="signup.html">Sign up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 ">
+                <div class="p-3">
+                    <input type="text" name="" id="" class="form-control w-25 " placeholder="Search">
+                    <div class="d-flex justify-content-between align-items-center  my-4">
+                        <h2 class="">Order Details</h2>
+                    </div>
+                    <div class="border rounded-3 p-4">
+                        <div>
+                            <h3>Order Name: {{order.name}}</h3>
+                            <div class="row mt-4">
+                                <div class="col-4">
+                                    <p class="fw-bolder">Customer Details</p>
+                                    <p>{{order.email}}</p>
+                                    <p>{{order.phone}}</p>
+                                    <p>{{order.address}}</p>
+                                </div>
+                                <div class="col-8">
+                                    <p class="fw-bolder">Order Details</p>
+                                    <p>Order ID: {{order.id}}</p>
+                                    <p>Order Total: {{order.total | number}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table my-3 ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <tr ng-repeat="sp in listSp">
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{sp.proName}}</td>
+                                    <td>
+                                        <div class="h-100" style="width: 30px;">
+                                            <img src="./assets/img/{{sp.proImage}}" alt="" class="mw-100 mh-100 ">
+                                        </div>
+                                    </td>
+                                    <td>{{sp.proPrice | number}}</td>
+                                    <td>{{sp.quantity}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,53 @@
+<main>
+    <div class="container">
+        <div class="my-3" style="height: 520px;">
+            <img src="https://media-api-beta.thinkpro.vn/backend/uploads/editor/v2/sale-53-7.jpg" alt="banner"
+                class="w-100 mh-100  rounded-3">
+        </div>
+        <div class="my-5">
+            <h2>New Products</h2>
+            <div class="row gap-2 align-items-stretch ">
+                <div class="col-10 row row-cols-4">
+                    <div class="col p-2" ng-repeat="sp in listSpNew | orderBy: '-id'">
+                        <div class="border rounded-3 p-3">
+                            <div class="d-flex justify-content-center align-items-center w-100 p-3"
+                                style=" height: 200px;">
+                                <a href="#!chi-tiet/{{sp.id}}">
+                                    <img src="./assets/img/{{sp.image}}" alt="" class="mw-100 mh-100 rounded-2">
+                                </a>
+                            </div>
+                            <div class="row align-items-center">
+                                <a href="#!chi-tiet/{{sp.id}}" class="list-unstyled text-decoration-none text-dark">
+                                    <h6 class="fw-bold mt-3">{{sp.name}}</h6>
+                                </a>
+                                <div class="d-flex justify-content-between align-items-center ">
+                                    <p class="text-danger fw-medium m-0">{{sp.price | number}} VND</p>
+                                    <button ng-click="addToCart(sp.id, 1)" class="btn btn-primary">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2 mt-2 p-0 ">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <h5 class="mt-2 mb-3">Sản phẩm bán chạy</h5>
+                        </div>
+                        <a ng-repeat="sp in listSpNew" href="#!chi-tiet/{{sp.id}}" class="list-group-item list-group-item-action " aria-current="true">
+                            <div class="d-flex gap-3 ">
+                                <div style="width: 30px; height: 30px;">
+                                    <img src="./assets/img/{{sp.image}}" alt="" class="w-100 h-100 ">
+                                </div>
+                                <span class="">{{sp.name}}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

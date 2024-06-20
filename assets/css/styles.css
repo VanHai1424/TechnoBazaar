@@ -1,0 +1,21 @@
+.hover-blue:hover {
+    color: #0d6efd !important;
+}
+
+.btn:focus,
+.btn:active{
+    border-color: transparent !important;
+    box-shadow: none !important; 
+}
+
+.rm-input-outline:focus-visible {
+    outline: none;
+}
+
+.rm-input-shadow:focus {
+    box-shadow: none;
+}
+
+.btn-focus_none:focus {
+    border-color: #0d6efd !important;
+}
